@@ -8,12 +8,14 @@
  *  - произвольный целочисленный тип - выводит побайтово, начиная со старшего, с символом "." в качестве разделителя
  *  - std::string - выводит без изменений
  *  - контейнеры std::list и std::vector - выводит поэлементно с символом "." в качестве разделителя
+ *  - std::tuple, содержащие элементы одного типа
  */
 
 #pragma once
 
 #include <type_traits>
 #include <iostream>
+#include <tuple>
 
 namespace my
 {
@@ -26,7 +28,7 @@ private:
     typedef struct { char array[2]; } two;
 
     template<typename C> static one test(typename C::const_iterator*);
-    template<typename C> static two  test(...);
+    template<typename C> static two test(...);
 public:
     static const bool value = sizeof(test<T>(0)) == sizeof(one);
     typedef T type;
@@ -67,11 +69,11 @@ void print_ip(const std::string& t)
 }
 
 //! Перегрузка для контейнеров
-template<class T>
-std::enable_if_t<is_container<T>::value, void> print_ip(const T& t)
+template<typename Container>
+std::enable_if_t<is_container<Container>::value, void> print_ip(const Container& c)
 {
-    for (auto it = std::begin(t); it != std::end(t); ++it) {
-        if (it != std::begin(t))
+    for (auto it = std::begin(c); it != std::end(c); ++it) {
+        if (it != std::begin(c))
             std::cout << ".";
         std::cout << *it;
     }
@@ -79,7 +81,7 @@ std::enable_if_t<is_container<T>::value, void> print_ip(const T& t)
 }
 
 //! Перегрузка для целочисленных типов
-template<class T>
+template<typename T>
 std::enable_if_t<std::is_integral<T>::value, void> print_ip(const T& t)
 {
     union bytes
@@ -96,16 +98,41 @@ std::enable_if_t<std::is_integral<T>::value, void> print_ip(const T& t)
     }
     std::cout << std::endl;
 }
-/*
-template<>
-void print_ip(const std::tuple& t)
+//---
+//! Вывод кортежа
+template<typename Type, size_t N, size_t Last>
+struct print_tuple
 {
-    for (auto it = std::begin(t); it != std::end(t); ++it) {
-        if (it != std::begin(t))
-            std::cout << ".";
-        std::cout << *it;
+    static void print(const Type& value)
+    {
+        std::cout << std::get<N>(value) << ".";
+        print_tuple<Type, N+1, Last>::print(value);
     }
+};
+
+template<typename Type, size_t N>
+struct print_tuple<Type, N, N>
+{
+    static void print(const Type& value)
+    {
+        std::cout << std::get<N>(value);
+    }
+};
+//! Проверка содержит ли кортеж только одинаковые типы
+template<typename... Args>
+struct all_same: std::false_type{};
+
+template<typename T>
+struct all_same<T>: std::true_type{};
+
+template<typename T, typename... Args>
+struct all_same<T, T, Args...>: all_same<T, Args...> {};
+//! Перегрузка для кортежей
+template<typename... Types>
+std::enable_if_t<all_same<Types...>::value, void> print_ip(const std::tuple<Types...>& value)
+{
+    print_tuple<std::tuple<Types...>, 0, sizeof...(Types) - 1>::print(value);
     std::cout<< std::endl;
 }
-*/
+
 }   // namespace my

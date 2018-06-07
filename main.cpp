@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <list>
+#include <tuple>
 
 #include "print_ip.h"
 
@@ -33,8 +34,11 @@ int main()
     std::vector<int> vector = {10, 20, 0, 1};
     my::print_ip(vector);
 
-    std::list<int> list = {10, 20, 0, 4};
+    std::list<int> list = {10, 20, 0, 2};
     my::print_ip(list);
+
+    auto tuple = std::make_tuple(10, 20, 0, 3);
+    my::print_ip(tuple);
 
     return 0;
 }
