@@ -1,36 +1,86 @@
+/*!
+ * \file
+ * \brief Заголовочный файл с шаблонной функцией print_ip()
+ * \author Aleksei Dovgal <altdaedroth@gmail.com>
+ */
+
 #pragma once
 
 #include <type_traits>
 #include <iostream>
-#include <vector>
 
 namespace my
 {
 namespace h
 {
-template<class T, bool = std::is_integral<T>::value>
+//! Шаблон, проверяющий наличие у типа const_iterator'а
+template<typename T>
+struct has_const_iterator
+{
+private:
+  typedef char                      one;
+  typedef struct { char array[2]; } two;
+
+  template<typename C> static one test(typename C::const_iterator*);
+  template<typename C> static two  test(...);
+public:
+  static const bool value = sizeof(test<T>(0)) == sizeof(one);
+  typedef T type;
+};
+//! Шаблон, проверяющий наличие у типа итураторов begin и end
+template <typename T>
+struct has_begin_end
+{
+  struct Dummy { typedef void const_iterator; };
+  typedef typename std::conditional<has_const_iterator<T>::value, T, Dummy>::type TType;
+  typedef typename TType::const_iterator iter;
+
+  struct Fallback { iter begin() const; iter end() const; };
+  struct Derived : TType, Fallback { };
+
+  template<typename C, C> struct ChT;
+
+  template<typename C> static char (&f(ChT<iter (Fallback::*)() const, &C::begin>*))[1];
+  template<typename C> static char (&f(...))[2];
+  template<typename C> static char (&g(ChT<iter (Fallback::*)() const, &C::end>*))[1];
+  template<typename C> static char (&g(...))[2];
+
+  static bool const beg_value = sizeof(f<Derived>(0)) == 2;
+  static bool const end_value = sizeof(g<Derived>(0)) == 2;
+};
+
+template <typename T>
+struct is_container
+{
+  static const bool value = has_const_iterator<T>::value &&
+    has_begin_end<T>::beg_value && has_begin_end<T>::end_value;
+};
+//---
+template<class T, bool = std::is_integral<T>::value, bool = is_container<T>::value>
 struct helper { };
 
+//! Перегрузка для std::string
+template<>
+struct helper<std::string>
+{
+    static void print_ip(const std::string& t)
+    {
+        std::cout << t << std::endl;
+    }
+};
+
+//! Перегрузка для целочисленных типов
 template<class T>
-struct helper<T, true>
+struct helper<T, true, false>
 {
     static void print_ip(const T& t)
     {
-        std::cout << "t = " << t << std::endl;
-        auto x = 0;
-        for (auto i = 0; i < sizeof(t); ++i) {
-            if (i != 0)
-                std::cout << ".";
-            x = ((unsigned int)t >> (8 * i)) & 0XFF;
-            std::cout << x;
-        }
-        std::cout << std::endl;
-
         union bytes
         {
             unsigned char b[sizeof(t)];
             T val;
         } bi;
+
         bi.val = t;
         for (auto i = 1; i <= sizeof(t); ++i) {
             if (i != 1)
@@ -41,16 +91,30 @@ struct helper<T, true>
     }
 };
 
+//! Перегрузка для контейнеров
 template<class T>
-struct helper<T, false>
+struct helper<T, false, true>
 {
     static void print_ip(const T& t)
     {
-        std::cout << t << std::endl;
+        for (auto it = std::begin(t); it != std::end(t); ++it) {
+            if (it != std::begin(t))
+                std::cout << ".";
+            std::cout << *it;
+        }
+        std::cout<< std::endl;
     }
 };
 
 }   // namespace h
+
+/*!
+ * Выводит на печать условный ip-адрес
+ * Может принимать на вход:
+ *  - произвольный целочисленный тип - выводит побайтово, начиная со старшего, с символом "." в качестве разделителя
+ *  - std::string - выводит без изменений
+ *  - контейнеры std::list и std::vector - выводит поэлементно с символом "." в качестве разделителя
+ */
 
 template<class T>
 void print_ip(const T& t)
