@@ -81,8 +81,6 @@ BOOST_AUTO_TEST_CASE(test_print_ip)
         auto tuple = std::make_tuple(10, 20, 0, 3);
         my::print_ip(tuple);
         BOOST_CHECK(output.is_equal("10.20.0.3\n"));
-
-
     }
 }
 
