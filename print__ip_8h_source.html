@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>print_ip: Исходный файл print_ip.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">print_ip
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Макросы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Страницы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">print_ip.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="print__ip_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacemy.html">   20</a></span>&#160;<span class="keyword">namespace </span>my</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structmy_1_1has__const__iterator.html">   24</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmy_1_1has__const__iterator.html">has_const_iterator</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">char</span>                      one;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span>{ <span class="keywordtype">char</span> array[2]; } two;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt; <span class="keyword">static</span> one test(<span class="keyword">typename</span> C::const_iterator*);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt; <span class="keyword">static</span> two test(...);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structmy_1_1has__const__iterator.html#a0857621e7eddb1b37cfadf7113e15cef">   33</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="structmy_1_1has__const__iterator.html#a0857621e7eddb1b37cfadf7113e15cef">value</a> = <span class="keyword">sizeof</span>(test&lt;T&gt;(0)) == <span class="keyword">sizeof</span>(one);</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structmy_1_1has__const__iterator.html#a14f0c820e6582ea136fa6138dc1d333f">   34</a></span>&#160;    <span class="keyword">typedef</span> T <a class="code" href="structmy_1_1has__const__iterator.html#a14f0c820e6582ea136fa6138dc1d333f">type</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structmy_1_1has__begin__end.html">   38</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmy_1_1has__begin__end.html">has_begin_end</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structmy_1_1has__begin__end_1_1_dummy.html#a652c863cfd978b75ab5a1bc9e2d8f3c1">   40</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structmy_1_1has__begin__end_1_1_dummy.html">Dummy</a> { <span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code" href="structmy_1_1has__begin__end_1_1_dummy.html#a652c863cfd978b75ab5a1bc9e2d8f3c1">const_iterator</a>; };</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structmy_1_1has__begin__end.html#af39cb94712b7d32b53c5a9d0ff9eb58e">   41</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> std::conditional&lt;has_const_iterator&lt;T&gt;::value, T, <a class="code" href="structmy_1_1has__begin__end_1_1_dummy.html">Dummy</a>&gt;::type <a class="code" href="structmy_1_1has__begin__end.html#af39cb94712b7d32b53c5a9d0ff9eb58e">TType</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structmy_1_1has__begin__end.html#adb81e340c61d7a3e36d481e8da6e4b4d">   42</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> TType::const_iterator <a class="code" href="structmy_1_1has__begin__end.html#adb81e340c61d7a3e36d481e8da6e4b4d">iter</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structmy_1_1has__begin__end_1_1_fallback.html">   44</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structmy_1_1has__begin__end_1_1_fallback.html">Fallback</a> { <a class="code" href="structmy_1_1has__begin__end.html#adb81e340c61d7a3e36d481e8da6e4b4d">iter</a> <a class="code" href="structmy_1_1has__begin__end_1_1_fallback.html#ab87b4ce65028fe1c1107fced0f3ba593">begin</a>() <span class="keyword">const</span>; <a class="code" href="structmy_1_1has__begin__end.html#adb81e340c61d7a3e36d481e8da6e4b4d">iter</a> <a class="code" href="structmy_1_1has__begin__end_1_1_fallback.html#af16a565f57605583ba09b99fd99fbe60">end</a>() <span class="keyword">const</span>; };</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structmy_1_1has__begin__end_1_1_derived.html">   45</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structmy_1_1has__begin__end_1_1_derived.html">Derived</a> : <a class="code" href="structmy_1_1has__begin__end.html#af39cb94712b7d32b53c5a9d0ff9eb58e">TType</a>, <a class="code" href="structmy_1_1has__begin__end_1_1_fallback.html">Fallback</a> { };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structmy_1_1has__begin__end_1_1_ch_t.html">   47</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C, C&gt; <span class="keyword">struct </span><a class="code" href="structmy_1_1has__begin__end_1_1_ch_t.html">ChT</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt; <span class="keyword">static</span> char (&amp;<a class="code" href="structmy_1_1has__begin__end.html#a3984e4c9c9a74b73de958ff82aaa8b10">f</a>(<a class="code" href="structmy_1_1has__begin__end_1_1_ch_t.html">ChT</a>&lt;<a class="code" href="structmy_1_1has__begin__end.html#adb81e340c61d7a3e36d481e8da6e4b4d">iter</a> (<a class="code" href="structmy_1_1has__begin__end_1_1_fallback.html">Fallback</a>::*)() <span class="keyword">const</span>, &amp;C::begin&gt;*))[1];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt; <span class="keyword">static</span> char (&amp;<a class="code" href="structmy_1_1has__begin__end.html#a3984e4c9c9a74b73de958ff82aaa8b10">f</a>(...))[2];</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt; <span class="keyword">static</span> char (&amp;<a class="code" href="structmy_1_1has__begin__end.html#aca404e7f5dceb72a103d82391dda4120">g</a>(<a class="code" href="structmy_1_1has__begin__end_1_1_ch_t.html">ChT</a>&lt;<a class="code" href="structmy_1_1has__begin__end.html#adb81e340c61d7a3e36d481e8da6e4b4d">iter</a> (<a class="code" href="structmy_1_1has__begin__end_1_1_fallback.html">Fallback</a>::*)() <span class="keyword">const</span>, &amp;C::end&gt;*))[1];</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt; <span class="keyword">static</span> char (&amp;<a class="code" href="structmy_1_1has__begin__end.html#aca404e7f5dceb72a103d82391dda4120">g</a>(...))[2];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structmy_1_1has__begin__end.html#a8c7514ba50e7487031542e4aabf2db83">   54</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <span class="keyword">const</span> <a class="code" href="structmy_1_1has__begin__end.html#a8c7514ba50e7487031542e4aabf2db83">beg_value</a> = <span class="keyword">sizeof</span>(f&lt;Derived&gt;(0)) == 2;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structmy_1_1has__begin__end.html#a4371d83a65d7435acd03f80e83923ef3">   55</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <span class="keyword">const</span> <a class="code" href="structmy_1_1has__begin__end.html#a4371d83a65d7435acd03f80e83923ef3">end_value</a> = <span class="keyword">sizeof</span>(g&lt;Derived&gt;(0)) == 2;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structmy_1_1is__container.html">   59</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmy_1_1is__container.html">is_container</a></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structmy_1_1is__container.html#ab27f3fbfc2a15b924c885e87f44bc5fa">   61</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="structmy_1_1is__container.html#ab27f3fbfc2a15b924c885e87f44bc5fa">value</a> = <a class="code" href="structmy_1_1has__const__iterator.html">has_const_iterator&lt;T&gt;::value</a> &amp;&amp;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="structmy_1_1has__begin__end.html">has_begin_end&lt;T&gt;::beg_value</a> &amp;&amp; <a class="code" href="structmy_1_1has__begin__end.html">has_begin_end&lt;T&gt;::end_value</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//---</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespacemy.html#afc2934d280698c2152da9dd31e237926">   66</a></span>&#160;<span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="namespacemy.html#afc2934d280698c2152da9dd31e237926">print_ip</a>(<span class="keyword">const</span> std::string&amp; t)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::cout &lt;&lt; t &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="namespacemy.html#ada9507a13d06b81be5ebf3bad1614ce0">   73</a></span>&#160;std::enable_if_t&lt;is_container&lt;Container&gt;::value, <span class="keywordtype">void</span>&gt; <a class="code" href="namespacemy.html#afc2934d280698c2152da9dd31e237926">print_ip</a>(<span class="keyword">const</span> Container&amp; c)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = std::begin(c); it != std::end(c); ++it) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (it != std::begin(c))</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        std::cout &lt;&lt; *it;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::cout&lt;&lt; std::endl;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="namespacemy.html#aecdcc062d41c2ebfed98b7c30293df95">   85</a></span>&#160;std::enable_if_t&lt;std::is_integral&lt;T&gt;::value, <span class="keywordtype">void</span>&gt; <a class="code" href="namespacemy.html#afc2934d280698c2152da9dd31e237926">print_ip</a>(<span class="keyword">const</span> T&amp; t)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">union </span>bytes</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> b[<span class="keyword">sizeof</span>(t)];</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        T val;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    } bi;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    bi.val = t;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 1; i &lt;= <span class="keyword">sizeof</span>(t); ++i) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (i != 1)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::cout &lt;&lt; (int)bi.b[<span class="keyword">sizeof</span>(t) - i];</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">//---</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"></span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type, <span class="keywordtype">size_t</span> N, <span class="keywordtype">size_t</span> Last&gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structmy_1_1print__tuple.html">  104</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmy_1_1print__tuple.html">print_tuple</a></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="structmy_1_1print__tuple.html#a5bc360416794e872347a3760e1ecf92c">  106</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structmy_1_1print__tuple.html#a5bc360416794e872347a3760e1ecf92c">print</a>(<span class="keyword">const</span> Type&amp; value)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        std::cout &lt;&lt; std::get&lt;N&gt;(value) &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="structmy_1_1print__tuple.html#a5bc360416794e872347a3760e1ecf92c">print_tuple&lt;Type, N+1, Last&gt;::print</a>(value);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type, <span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structmy_1_1print__tuple_3_01_type_00_01_n_00_01_n_01_4.html">  114</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmy_1_1print__tuple.html">print_tuple</a>&lt;Type, N, N&gt;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structmy_1_1print__tuple_3_01_type_00_01_n_00_01_n_01_4.html#adcc46e7154a39da52135b26ae0e8e93f">  116</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structmy_1_1print__tuple_3_01_type_00_01_n_00_01_n_01_4.html#adcc46e7154a39da52135b26ae0e8e93f">print</a>(<span class="keyword">const</span> Type&amp; value)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        std::cout &lt;&lt; std::get&lt;N&gt;(value);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="structmy_1_1all__same.html">  123</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmy_1_1all__same.html">all_same</a>: std::false_type{};</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structmy_1_1all__same_3_01_t_01_4.html">  126</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmy_1_1all__same.html">all_same</a>&lt;T&gt;: std::true_type{};</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="structmy_1_1all__same_3_01_t_00_01_t_00_01_args_8_8_8_4.html">  129</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmy_1_1all__same.html">all_same</a>&lt;T, T, Args...&gt;: <a class="code" href="structmy_1_1all__same.html">all_same</a>&lt;T, Args...&gt; {};</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Types&gt;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="namespacemy.html#a4b23b5bd2e120c488541ff6dd963d418">  132</a></span>&#160;std::enable_if_t&lt;<a class="code" href="structmy_1_1all__same.html">all_same</a>&lt;Types...&gt;::value, <span class="keywordtype">void</span>&gt; <a class="code" href="namespacemy.html#afc2934d280698c2152da9dd31e237926">print_ip</a>(<span class="keyword">const</span> std::tuple&lt;Types...&gt;&amp; value)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="structmy_1_1print__tuple.html">print_tuple</a>&lt;std::tuple&lt;Types...&gt;, 0, <span class="keyword">sizeof</span>...(Types) - 1&gt;::print(value);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    std::cout&lt;&lt; std::endl;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}   <span class="comment">// namespace my</span></div>
+<div class="ttc" id="structmy_1_1has__begin__end_1_1_fallback_html_af16a565f57605583ba09b99fd99fbe60"><div class="ttname"><a href="structmy_1_1has__begin__end_1_1_fallback.html#af16a565f57605583ba09b99fd99fbe60">my::has_begin_end::Fallback::end</a></div><div class="ttdeci">iter end() const </div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_1_1_ch_t_html"><div class="ttname"><a href="structmy_1_1has__begin__end_1_1_ch_t.html">my::has_begin_end::ChT</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:47</div></div>
+<div class="ttc" id="structmy_1_1has__const__iterator_html"><div class="ttname"><a href="structmy_1_1has__const__iterator.html">my::has_const_iterator</a></div><div class="ttdoc">Шаблон, проверяющий наличие у типа const_iterator&#39;а </div><div class="ttdef"><b>Definition:</b> print_ip.h:24</div></div>
+<div class="ttc" id="structmy_1_1is__container_html_ab27f3fbfc2a15b924c885e87f44bc5fa"><div class="ttname"><a href="structmy_1_1is__container.html#ab27f3fbfc2a15b924c885e87f44bc5fa">my::is_container::value</a></div><div class="ttdeci">static const bool value</div><div class="ttdef"><b>Definition:</b> print_ip.h:61</div></div>
+<div class="ttc" id="structmy_1_1all__same_html"><div class="ttname"><a href="structmy_1_1all__same.html">my::all_same</a></div><div class="ttdoc">Проверка содержит ли кортеж только одинаковые типы </div><div class="ttdef"><b>Definition:</b> print_ip.h:123</div></div>
+<div class="ttc" id="structmy_1_1print__tuple_html_a5bc360416794e872347a3760e1ecf92c"><div class="ttname"><a href="structmy_1_1print__tuple.html#a5bc360416794e872347a3760e1ecf92c">my::print_tuple::print</a></div><div class="ttdeci">static void print(const Type &amp;value)</div><div class="ttdef"><b>Definition:</b> print_ip.h:106</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_html_a8c7514ba50e7487031542e4aabf2db83"><div class="ttname"><a href="structmy_1_1has__begin__end.html#a8c7514ba50e7487031542e4aabf2db83">my::has_begin_end::beg_value</a></div><div class="ttdeci">static bool const beg_value</div><div class="ttdef"><b>Definition:</b> print_ip.h:54</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_html_adb81e340c61d7a3e36d481e8da6e4b4d"><div class="ttname"><a href="structmy_1_1has__begin__end.html#adb81e340c61d7a3e36d481e8da6e4b4d">my::has_begin_end::iter</a></div><div class="ttdeci">TType::const_iterator iter</div><div class="ttdef"><b>Definition:</b> print_ip.h:42</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_html_a3984e4c9c9a74b73de958ff82aaa8b10"><div class="ttname"><a href="structmy_1_1has__begin__end.html#a3984e4c9c9a74b73de958ff82aaa8b10">my::has_begin_end::f</a></div><div class="ttdeci">static char(&amp; f(ChT&lt; iter(Fallback::*)() const,&amp;C::begin &gt; *))[1]</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_html_af39cb94712b7d32b53c5a9d0ff9eb58e"><div class="ttname"><a href="structmy_1_1has__begin__end.html#af39cb94712b7d32b53c5a9d0ff9eb58e">my::has_begin_end::TType</a></div><div class="ttdeci">std::conditional&lt; has_const_iterator&lt; T &gt;::value, T, Dummy &gt;::type TType</div><div class="ttdef"><b>Definition:</b> print_ip.h:41</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_1_1_dummy_html_a652c863cfd978b75ab5a1bc9e2d8f3c1"><div class="ttname"><a href="structmy_1_1has__begin__end_1_1_dummy.html#a652c863cfd978b75ab5a1bc9e2d8f3c1">my::has_begin_end::Dummy::const_iterator</a></div><div class="ttdeci">void const_iterator</div><div class="ttdef"><b>Definition:</b> print_ip.h:40</div></div>
+<div class="ttc" id="structmy_1_1print__tuple_3_01_type_00_01_n_00_01_n_01_4_html_adcc46e7154a39da52135b26ae0e8e93f"><div class="ttname"><a href="structmy_1_1print__tuple_3_01_type_00_01_n_00_01_n_01_4.html#adcc46e7154a39da52135b26ae0e8e93f">my::print_tuple&lt; Type, N, N &gt;::print</a></div><div class="ttdeci">static void print(const Type &amp;value)</div><div class="ttdef"><b>Definition:</b> print_ip.h:116</div></div>
+<div class="ttc" id="structmy_1_1is__container_html"><div class="ttname"><a href="structmy_1_1is__container.html">my::is_container</a></div><div class="ttdoc">Шаблон, проверяющий является ли тип контейнером </div><div class="ttdef"><b>Definition:</b> print_ip.h:59</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_1_1_fallback_html"><div class="ttname"><a href="structmy_1_1has__begin__end_1_1_fallback.html">my::has_begin_end::Fallback</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:44</div></div>
+<div class="ttc" id="structmy_1_1print__tuple_html"><div class="ttname"><a href="structmy_1_1print__tuple.html">my::print_tuple</a></div><div class="ttdoc">Вывод кортежа </div><div class="ttdef"><b>Definition:</b> print_ip.h:104</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_html"><div class="ttname"><a href="structmy_1_1has__begin__end.html">my::has_begin_end</a></div><div class="ttdoc">Шаблон, проверяющий наличие у типа итераторов begin и end. </div><div class="ttdef"><b>Definition:</b> print_ip.h:38</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_1_1_dummy_html"><div class="ttname"><a href="structmy_1_1has__begin__end_1_1_dummy.html">my::has_begin_end::Dummy</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:40</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_html_aca404e7f5dceb72a103d82391dda4120"><div class="ttname"><a href="structmy_1_1has__begin__end.html#aca404e7f5dceb72a103d82391dda4120">my::has_begin_end::g</a></div><div class="ttdeci">static char(&amp; g(ChT&lt; iter(Fallback::*)() const,&amp;C::end &gt; *))[1]</div></div>
+<div class="ttc" id="structmy_1_1has__const__iterator_html_a0857621e7eddb1b37cfadf7113e15cef"><div class="ttname"><a href="structmy_1_1has__const__iterator.html#a0857621e7eddb1b37cfadf7113e15cef">my::has_const_iterator::value</a></div><div class="ttdeci">static const bool value</div><div class="ttdef"><b>Definition:</b> print_ip.h:33</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_html_a4371d83a65d7435acd03f80e83923ef3"><div class="ttname"><a href="structmy_1_1has__begin__end.html#a4371d83a65d7435acd03f80e83923ef3">my::has_begin_end::end_value</a></div><div class="ttdeci">static bool const end_value</div><div class="ttdef"><b>Definition:</b> print_ip.h:55</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_1_1_fallback_html_ab87b4ce65028fe1c1107fced0f3ba593"><div class="ttname"><a href="structmy_1_1has__begin__end_1_1_fallback.html#ab87b4ce65028fe1c1107fced0f3ba593">my::has_begin_end::Fallback::begin</a></div><div class="ttdeci">iter begin() const </div></div>
+<div class="ttc" id="structmy_1_1has__const__iterator_html_a14f0c820e6582ea136fa6138dc1d333f"><div class="ttname"><a href="structmy_1_1has__const__iterator.html#a14f0c820e6582ea136fa6138dc1d333f">my::has_const_iterator::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition:</b> print_ip.h:34</div></div>
+<div class="ttc" id="structmy_1_1has__begin__end_1_1_derived_html"><div class="ttname"><a href="structmy_1_1has__begin__end_1_1_derived.html">my::has_begin_end::Derived</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:45</div></div>
+<div class="ttc" id="namespacemy_html_afc2934d280698c2152da9dd31e237926"><div class="ttname"><a href="namespacemy.html#afc2934d280698c2152da9dd31e237926">my::print_ip</a></div><div class="ttdeci">void print_ip(const std::string &amp;t)</div><div class="ttdoc">Перегрузка для std::string. </div><div class="ttdef"><b>Definition:</b> print_ip.h:66</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

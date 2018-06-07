@@ -1,0 +1,7 @@
+digraph "Иерархия классов. Графический вид."
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="my::has_begin_end\<\l T \>::Dummy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmy_1_1has__begin__end_1_1_dummy.html"];
+}
